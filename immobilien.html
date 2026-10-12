@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Immobilien in City – Kaufen & Mieten | Muster Immobilien</title>
+  <meta name="description" content="Alle Immobilienangebote in City: Eigentumswohnungen, Häuser, Mehrfamilienhäuser zum Kauf sowie Mietwohnungen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html" data-i18n="bc.home">Startseite</a> / <span data-i18n="bc.props">Immobilien</span></div>
+      <h1 id="catalog-title">Immobilien kaufen in City</h1>
+      <p class="lead mb-0" data-i18n="catalog.lead">Alle Angebote mit vollständigen Unterlagen. Nicht das Passende dabei? Wir informieren Sie über neue Objekte, bevor sie online gehen.</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container catalog-layout">
+      <aside class="card filters" aria-label="Filter">
+        <div class="field">
+          <span class="label" data-i18n="filter.deal">Angebot</span>
+          <div class="seg" id="f-deal">
+            <button type="button" data-deal="kauf" data-i18n="search.buy">Kaufen</button>
+            <button type="button" data-deal="miete" data-i18n="search.rent">Mieten</button>
+            <button type="button" data-deal="alle" data-i18n="filter.all">Alle</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-type" data-i18n="search.type">Objektart</label>
+          <select id="f-type">
+            <option value="" data-i18n="search.allTypes">Alle Objektarten</option>
+            <option value="wohnung" data-i18n="search.apartment">Wohnung</option>
+            <option value="haus" data-i18n="search.house">Haus</option>
+            <option value="mfh" data-i18n="search.mfh">Mehrfamilienhaus / Gesamtobjekt</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-price" id="f-price-label">Max. Kaufpreis</label>
+          <select id="f-price"></select>
+        </div>
+        <div class="field">
+          <label for="f-rooms" data-i18n="search.rooms">Zimmer ab</label>
+          <select id="f-rooms">
+            <option value="" data-i18n="search.any">Beliebig</option>
+            <option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-area" data-i18n="filter.area">Wohnfläche ab</label>
+          <select id="f-area">
+            <option value="" data-i18n="search.any">Beliebig</option>
+            <option value="40">40 m²</option><option value="60">60 m²</option><option value="80">80 m²</option><option value="100">100 m²</option><option value="140">140 m²</option><option value="300">300 m²</option>
+          </select>
+        </div>
+        <button class="btn btn-outline btn-sm" type="button" id="f-reset" data-i18n="catalog.reset">Filter zurücksetzen</button>
+        <div class="notice">
+          <strong style="color:var(--ink)" data-i18n="filter.alertT">Suchauftrag</strong><br>
+          <span data-i18n="filter.alertP">Nichts gefunden? Wir suchen gezielt für Sie.</span>
+          <a href="kontakt.html" data-i18n="filter.alertL">Suchauftrag anlegen →</a>
+        </div>
+      </aside>
+
+      <div>
+        <div class="results-bar">
+          <strong id="result-count" style="color:var(--ink)"></strong>
+          <div class="flex gap-2" style="align-items:center">
+            <label for="f-sort" class="small muted" data-i18n="filter.sort">Sortieren</label>
+            <select id="f-sort">
+              <option value="new" data-i18n="sort.new">Neueste zuerst</option>
+              <option value="priceAsc" data-i18n="sort.priceAsc">Preis aufsteigend</option>
+              <option value="priceDesc" data-i18n="sort.priceDesc">Preis absteigend</option>
+              <option value="area" data-i18n="sort.area">Größte Fläche</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-auto" id="catalog-grid"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/properties.js"></script>
+<script src="js/banks.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

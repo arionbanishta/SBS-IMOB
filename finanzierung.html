@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finanzierungsrechner – Kann ich mir die Immobilie leisten? | Muster Immobilien</title>
+  <meta name="description" content="Kostenloser Baufinanzierungsrechner: Kreditwürdigkeit prüfen, monatliche Rate berechnen und aktuelle Bauzinsen deutscher Banken vergleichen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html" data-i18n="bc.home">Startseite</a> / <span data-i18n="nav.calcShort">Finanzierungsrechner</span></div>
+      <h1 data-i18n="calc.h1">Finanzierungsrechner</h1>
+      <p class="lead mb-0" data-i18n="calc.lead">Prüfen Sie in zwei Minuten, ob Sie einen Immobilienkredit bekommen können, welche Konditionen realistisch sind und welche Bank aktuell den besten Zins bietet.</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container calc-layout">
+      <!-- INPUTS -->
+      <form class="card calc-form" id="calc-form" novalidate>
+        <div class="small muted" id="calc-prop"></div>
+        <fieldset>
+          <legend><span class="num">1</span><span data-i18n="calc.s1">Immobilie</span></legend>
+          <div class="field">
+            <label for="c-price" data-i18n="calc.price">Kaufpreis</label>
+            <div class="input-suffix"><input id="c-price" type="number" min="0" step="1000" value="389000" inputmode="numeric"><span>€</span></div>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="c-state" data-i18n="calc.state">Bundesland</label>
+              <select id="c-state"></select>
+            </div>
+            <div class="field">
+              <label for="c-commission" data-i18n="calc.commission">Maklerprovision</label>
+              <select id="c-commission">
+                <option value="3.57">3,57 %</option>
+                <option value="2.38">2,38 %</option>
+                <option value="0" data-i18n="calc.noCommission">provisionsfrei</option>
+              </select>
+            </div>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="c-area" data-i18n="calc.area">Wohnfläche</label>
+              <div class="input-suffix"><input id="c-area" type="number" min="10" value="82"><span>m²</span></div>
+            </div>
+            <div class="field">
+              <label for="c-use" data-i18n="calc.use">Nutzung</label>
+              <select id="c-use">
+                <option value="eigen" data-i18n="calc.useOwn">Selbst bewohnen</option>
+                <option value="kapital" data-i18n="calc.useInvest">Kapitalanlage</option>
+              </select>
+            </div>
+          </div>
+          <div class="two only-kapital hidden">
+            <div class="field">
+              <label for="c-rent" data-i18n="calc.rent">Mieteinnahme (kalt)</label>
+              <div class="input-suffix"><input id="c-rent" type="number" min="0" value="0"><span>€/M</span></div>
+            </div>
+            <div class="field">
+              <label for="c-own" data-i18n="calc.ownRent">Eigene Warmmiete</label>
+              <div class="input-suffix"><input id="c-own" type="number" min="0" value="900"><span>€/M</span></div>
+            </div>
+          </div>
+        </fieldset>
+        <hr>
+        <fieldset>
+          <legend><span class="num">2</span><span data-i18n="calc.s2">Finanzen</span></legend>
+          <div class="field">
+            <label for="c-equity" data-i18n="calc.equity">Eigenkapital</label>
+            <div class="input-suffix"><input id="c-equity" type="number" min="0" step="1000" value="130000"><span>€</span></div>
+            <span class="hint" data-i18n="calc.equityHint">Ersparnisse, die Sie in den Kauf einbringen</span>
+          </div>
+          <div class="field">
+            <label for="c-income" data-i18n="calc.income">Nettoeinkommen des Haushalts</label>
+            <div class="input-suffix"><input id="c-income" type="number" min="0" step="100" value="5200"><span>€/M</span></div>
+            <span class="hint" data-i18n="calc.incomeHint">Alle Kreditnehmer zusammen, inkl. Kindergeld</span>
+          </div>
+          <div class="field">
+            <label for="c-oblig" data-i18n="calc.oblig">Laufende Kredite / Leasing</label>
+            <div class="input-suffix"><input id="c-oblig" type="number" min="0" step="50" value="0"><span>€/M</span></div>
+          </div>
+        </fieldset>
+        <hr>
+        <fieldset>
+          <legend><span class="num">3</span><span data-i18n="calc.s3">Persönliches</span></legend>
+          <div class="field">
+            <label for="c-job" data-i18n="calc.job">Beschäftigung (Hauptverdiener)</label>
+            <select id="c-job">
+              <option value="angestellt" data-i18n="job.angestellt">Angestellt, unbefristet</option>
+              <option value="beamter" data-i18n="job.beamter">Beamter / Beamtin</option>
+              <option value="selbst3" data-i18n="job.selbst3">Selbständig, 3+ Jahre</option>
+              <option value="selbst0" data-i18n="job.selbst0">Selbständig, unter 3 Jahre</option>
+              <option value="befristet" data-i18n="job.befristet">Angestellt, befristet</option>
+              <option value="probezeit" data-i18n="job.probezeit">In der Probezeit</option>
+              <option value="rentner" data-i18n="job.rentner">Rentner / Pensionär</option>
+            </select>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="c-age" data-i18n="calc.age">Alter</label>
+              <input id="c-age" type="number" min="18" max="90" value="36">
+            </div>
+            <div class="field">
+              <label for="c-adults" data-i18n="calc.adults">Erwachsene</label>
+              <select id="c-adults"><option value="1">1</option><option value="2" selected>2</option></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-children" data-i18n="calc.children">Kinder im Haushalt</label>
+            <select id="c-children"><option>0</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+          </div>
+        </fieldset>
+        <hr>
+        <fieldset>
+          <legend><span class="num">4</span><span data-i18n="calc.s4">Wunschkonditionen</span></legend>
+          <div class="field">
+            <label for="c-term" data-i18n="calc.term">Zinsbindung (Jahre)</label>
+            <select id="c-term">
+              <option value="5">5</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-repay" data-i18n="calc.repay">Anfängliche Tilgung</label>
+            <div class="range-row"><input id="c-repay" type="range" min="1" max="5" step="0.25" value="2"><output id="c-repay-out">2 %</output></div>
+            <span class="hint" data-i18n="calc.repayHint">Banken empfehlen mindestens 2 % – so sind Sie schneller schuldenfrei.</span>
+          </div>
+        </fieldset>
+        <button class="btn btn-primary btn-block" type="submit"><i data-icon="calc"></i> <span data-i18n="calc.submit">Ergebnis anzeigen</span></button>
+      </form>
+
+      <!-- RESULTS -->
+      <div>
+        <div id="calc-empty" class="card empty-state hidden">
+          <h3 data-i18n="calc.emptyT">Bitte Kaufpreis und Einkommen eingeben</h3>
+          <p class="muted mb-0" data-i18n="calc.emptyP">Das Ergebnis erscheint sofort.</p>
+        </div>
+        <div id="calc-results">
+          <div id="verdict" class="verdict"></div>
+          <div class="kpis" id="kpis"></div>
+
+          <div class="card detail-block">
+            <h3 data-i18n="calc.checksT">So bewerten Banken Ihre Anfrage</h3>
+            <div class="checks" id="checks"></div>
+          </div>
+
+          <div class="card detail-block">
+            <div class="flex wrap" style="justify-content:space-between;align-items:baseline;gap:10px">
+              <h3 data-i18n="calc.banksT">Zinsvergleich: Wer bietet den besten Zins?</h3>
+              <span class="small muted"><span data-i18n="calc.asOf">Stand</span> <span id="rates-updated"></span></span>
+            </div>
+            <p class="small muted" data-i18n="calc.banksP">Effektiver Jahreszins für Ihr Darlehen, Ihre Zinsbindung und Ihren Beleihungsauslauf.</p>
+            <div class="table-wrap">
+              <table class="banks">
+                <thead><tr>
+                  <th>#</th><th data-i18n="calc.thBank">Bank / Vermittler</th><th class="num" data-i18n="calc.thRate">Eff. Zins</th><th class="num" data-i18n="calc.thMonthly">Rate / Monat</th><th class="num" data-i18n="calc.thInterest">Zinskosten</th><th class="num" data-i18n="calc.thRest">Restschuld</th><th data-i18n="calc.thSource">Quelle</th>
+                </tr></thead>
+                <tbody id="bank-body"></tbody>
+              </table>
+            </div>
+            <p class="small mt-2 mb-0" id="bank-save"></p>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="card detail-block">
+              <h3 data-i18n="calc.costsT">Kosten & Darlehensbedarf</h3>
+              <dl class="kv" id="costs"></dl>
+            </div>
+            <div class="card detail-block">
+              <h3 data-i18n="calc.termsT">Ihre Kreditkonditionen</h3>
+              <dl class="kv" id="terms"></dl>
+            </div>
+          </div>
+
+          <div class="card detail-block">
+            <h3 data-i18n="calc.chartT">Restschuld im Zeitverlauf</h3>
+            <div class="chart-box" id="chart"></div>
+            <div class="legend"><span><i style="background:#b0803f"></i><span data-i18n="calc.legendDebt">Restschuld</span></span><span><i style="background:#152238"></i><span data-i18n="calc.legendTerm">Ende der Zinsbindung</span></span><span data-i18n="calc.legendX">x-Achse: Jahre</span></div>
+          </div>
+
+          <div class="cta-banner" style="margin-bottom:24px">
+            <div style="position:relative;z-index:1">
+              <h2 style="font-size:1.7rem" data-i18n="calc.ctaT">Konkretes Angebot gewünscht?</h2>
+              <p class="mb-0" data-i18n="calc.ctaP">Unsere Finanzierungspartner vergleichen über 400 Banken für Sie – kostenlos. Wir melden uns innerhalb von 24 Stunden.</p>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="kontakt.html?topic=finanzierung" data-i18n="calc.ctaBtn">Beratung anfragen</a>
+            </div>
+          </div>
+
+          <div class="notice">
+            <strong style="color:var(--ink)" data-i18n="calc.discT">Wichtiger Hinweis</strong><br>
+            <span data-i18n="calc.discP">Alle Ergebnisse sind unverbindliche Richtwerte und keine Finanzierungszusage. Die tatsächlichen Konditionen hängen von Ihrer Bonität (SCHUFA), dem Beleihungswert der Immobilie und der Prüfung durch die Bank ab. Zinsen mit „Quelle geprüft“ wurden in öffentlichen Quellen gefunden, „Richtwert“ sind typische Marktpositionen. *Gesamtzinsen unter der Annahme, dass der Zins nach der Zinsbindung gleich bleibt.</span>
+            <br><span data-i18n="calc.sources">Zinsquellen:</span>
+            <a href="https://baufivergleich.de/aktuelle-zinsen/" target="_blank" rel="noopener">baufivergleich.de</a>,
+            <a href="https://www.drklein.de/aktuelle-bauzinsen.html" target="_blank" rel="noopener">drklein.de</a>,
+            <a href="https://finanzfacts.de/bauzinsen-aktuell/" target="_blank" rel="noopener">finanzfacts.de</a>,
+            <a href="https://www.capitalo.de/baufinanzierung/bauzinsen" target="_blank" rel="noopener">capitalo.de</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/properties.js"></script>
+<script src="js/banks.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/calculator.js"></script>
+</body>
+</html>

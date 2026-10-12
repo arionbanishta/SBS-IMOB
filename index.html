@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muster Immobilien – Wohnungen & Häuser kaufen, mieten und verkaufen in City</title>
+  <meta name="description" content="Ihr Immobilienmakler in City: Eigentumswohnungen, Häuser und Mehrfamilienhäuser kaufen, mieten oder verkaufen. Mit kostenlosem Finanzierungsrechner.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=75')"></div>
+    <div class="container">
+      <span class="eyebrow" data-i18n="home.eyebrow">Ihr Immobilienpartner in City</span>
+      <h1 data-i18n="home.h1">Das richtige Zuhause finden. Werte sicher anlegen.</h1>
+      <p class="lead" data-i18n="home.lead">Eigentumswohnungen, Häuser und ganze Mehrfamilienhäuser – persönlich beraten, transparent finanziert, sicher bis zum Notartermin begleitet.</p>
+
+      <form class="search-card" id="home-search">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-deal="kauf" data-i18n="search.buy">Kaufen</button>
+          <button type="button" class="tab" data-deal="miete" data-i18n="search.rent">Mieten</button>
+        </div>
+        <div class="search-grid">
+          <div class="field">
+            <label data-i18n="search.type">Objektart</label>
+            <select name="type">
+              <option value="" data-i18n="search.allTypes">Alle Objektarten</option>
+              <option value="wohnung" data-i18n="search.apartment">Wohnung</option>
+              <option value="haus" data-i18n="search.house">Haus</option>
+              <option value="mfh" data-i18n="search.mfh">Mehrfamilienhaus / Gesamtobjekt</option>
+            </select>
+          </div>
+          <div class="field">
+            <label data-price-label data-i18n="search.maxPrice">Max. Kaufpreis</label>
+            <select name="maxPrice"></select>
+          </div>
+          <div class="field">
+            <label data-i18n="search.rooms">Zimmer ab</label>
+            <select name="rooms">
+              <option value="" data-i18n="search.any">Beliebig</option>
+              <option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label data-i18n="search.location">Ort</label>
+            <input type="text" value="City" disabled>
+          </div>
+          <button class="btn btn-primary" type="submit"><i data-icon="search"></i> <span data-i18n="search.submit">Suchen</span></button>
+        </div>
+      </form>
+      <p class="mt-3" style="color:#c9d1df">
+        <span data-i18n="home.sellHint">Sie möchten verkaufen?</span>
+        <a href="verkaufen.html" style="color:#e0b877;font-weight:600" data-i18n="home.sellHintLink">Kostenlose Bewertung anfordern →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-i18n="home.servicesEyebrow">Unsere Leistungen</span>
+        <h2 data-i18n="home.servicesTitle">Alles rund um Ihre Immobilie – aus einer Hand</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="card feature service-card reveal">
+          <div class="f-icon"><i data-icon="key"></i></div>
+          <h3 data-i18n="svc.buyT">Immobilie kaufen</h3>
+          <p data-i18n="svc.buyP">Geprüfte Wohnungen und Häuser in City – mit vollständigen Unterlagen und ehrlicher Beratung.</p>
+          <a class="link-arrow" href="immobilien.html?deal=kauf"><span data-i18n="svc.buyL">Angebote ansehen</span> <i data-icon="arrow"></i></a>
+        </div>
+        <div class="card feature service-card highlight reveal">
+          <span class="badge badge-accent tag-small" data-i18n="svc.sellTag">Kostenlos</span>
+          <div class="f-icon"><i data-icon="tag"></i></div>
+          <h3 data-i18n="svc.sellT">Immobilie verkaufen</h3>
+          <p data-i18n="svc.sellP">Wir kaufen direkt an oder vermarkten Ihre Wohnung, Ihr Haus oder Ihr ganzes Gebäude zum besten Preis.</p>
+          <a class="link-arrow" href="verkaufen.html"><span data-i18n="svc.sellL">Wert ermitteln lassen</span> <i data-icon="arrow"></i></a>
+        </div>
+        <div class="card feature service-card reveal">
+          <div class="f-icon"><i data-icon="building"></i></div>
+          <h3 data-i18n="svc.mfhT">Ganze Gebäude</h3>
+          <p data-i18n="svc.mfhP">Mehrfamilien- sowie Wohn- und Geschäftshäuser für Investoren – diskret und mit Renditeberechnung.</p>
+          <a class="link-arrow" href="immobilien.html?deal=kauf&type=mfh"><span data-i18n="svc.mfhL">Gesamtobjekte</span> <i data-icon="arrow"></i></a>
+        </div>
+        <div class="card feature service-card reveal">
+          <div class="f-icon"><i data-icon="home"></i></div>
+          <h3 data-i18n="svc.rentT">Immobilie mieten</h3>
+          <p data-i18n="svc.rentP">Neu bei uns: ausgewählte Mietwohnungen und Häuser in guten Lagen von City.</p>
+          <a class="link-arrow" href="immobilien.html?deal=miete"><span data-i18n="svc.rentL">Mietangebote</span> <i data-icon="arrow"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED FOR SALE -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head flex wrap" style="justify-content:space-between;align-items:end;gap:20px">
+        <div>
+          <span class="eyebrow" data-i18n="home.featEyebrow">Aktuelle Kaufangebote</span>
+          <h2 class="mb-0" data-i18n="home.featTitle">Neu im Angebot</h2>
+        </div>
+        <a class="btn btn-outline" href="immobilien.html?deal=kauf"><span data-i18n="home.featAll">Alle Kaufangebote</span> <i data-icon="arrow"></i></a>
+      </div>
+      <div class="grid grid-3" id="featured"></div>
+    </div>
+  </section>
+
+  <!-- SELL -->
+  <section class="section">
+    <div class="container split">
+      <div class="img-stack reveal">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=75" alt="" loading="lazy">
+        <div class="float-card">
+          <strong>38</strong>
+          <span class="small muted" data-i18n="sell.float">Tage durchschnittlich<br>bis zum Notartermin</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="sell.eyebrow">Verkaufen mit Muster Immobilien</span>
+        <h2 data-i18n="sell.title">Sie möchten Ihre Immobilie verkaufen?</h2>
+        <p class="lead" data-i18n="sell.lead">Ob einzelne Wohnung, Einfamilienhaus oder komplettes Mehrfamilienhaus: Wir ermitteln den Marktwert kostenlos und machen Ihnen ein faires Angebot – oder vermarkten für Sie.</p>
+        <ul class="checklist">
+          <li><i data-icon="check"></i><span data-i18n="sell.c1">Kostenlose, unverbindliche Wertermittlung innerhalb von 48 Stunden</span></li>
+          <li><i data-icon="check"></i><span data-i18n="sell.c2">Direktankauf möglich – ohne Besichtigungstourismus</span></li>
+          <li><i data-icon="check"></i><span data-i18n="sell.c3">Diskrete Vermarktung an geprüfte, finanzierte Käufer</span></li>
+          <li><i data-icon="check"></i><span data-i18n="sell.c4">Wir kaufen auch vermietete Objekte und ganze Gebäude</span></li>
+        </ul>
+        <a class="btn btn-primary" href="verkaufen.html"><span data-i18n="sell.cta">Jetzt Immobilie bewerten lassen</span> <i data-icon="arrow"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR TEASER -->
+  <section class="section section-dark">
+    <div class="container split reverse">
+      <div class="card reveal" style="padding:28px;color:var(--text)">
+        <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:18px">
+          <strong style="color:var(--ink)" data-i18n="calcT.example">Beispielrechnung</strong>
+          <span class="badge badge-ok" data-i18n="calcT.good">Gute Chancen</span>
+        </div>
+        <dl class="kv">
+          <dt data-i18n="calcT.price">Kaufpreis</dt><dd>389.000 €</dd>
+          <dt data-i18n="calcT.equity">Eigenkapital</dt><dd>130.000 €</dd>
+          <dt data-i18n="calcT.term">Zinsbindung</dt><dd data-i18n="calcT.termV">10 Jahre</dd>
+          <dt data-i18n="calcT.rate">Bester Zins (eff.)</dt><dd>4,28 %</dd>
+          <dt class="total" data-i18n="calcT.monthly">Monatliche Rate</dt><dd class="total">≈ 1.580 €</dd>
+        </dl>
+        <p class="small muted mt-2 mb-0" data-i18n="calcT.note">Beispielwerte, Zinsen Stand 30.09.2026.</p>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="calcT.eyebrow">Finanzierungsrechner</span>
+        <h2 data-i18n="calcT.title">Können Sie sich Ihre Wunschimmobilie leisten?</h2>
+        <p style="color:#b8c2d6;font-size:1.1rem" data-i18n="calcT.lead">Geben Sie Einkommen, Eigenkapital und Beschäftigung ein – unser Rechner zeigt Ihnen in Sekunden, ob ein Kredit realistisch ist, welche Rate auf Sie zukommt und welche Bank aktuell die besten Zinsen bietet.</p>
+        <ul class="checklist" style="color:#d6dcea">
+          <li><i data-icon="check"></i><span data-i18n="calcT.c1">Kreditwürdigkeit nach den Kriterien deutscher Banken</span></li>
+          <li><i data-icon="check"></i><span data-i18n="calcT.c2">Kaufnebenkosten je Bundesland</span></li>
+          <li><i data-icon="check"></i><span data-i18n="calcT.c3">Zinsvergleich von 10 Banken und Vermittlern</span></li>
+        </ul>
+        <a class="btn btn-primary" href="finanzierung.html"><i data-icon="calc"></i> <span data-i18n="calcT.cta">Jetzt kostenlos berechnen</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHOLE BUILDINGS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head flex wrap" style="justify-content:space-between;align-items:end;gap:20px">
+        <div>
+          <span class="eyebrow" data-i18n="mfh.eyebrow">Für Investoren</span>
+          <h2 class="mb-0" data-i18n="mfh.title">Ganze Häuser & Mehrfamilienhäuser</h2>
+          <p class="lead mt-2 mb-0" data-i18n="mfh.lead">Rendite-Objekte mit Mieterliste und Ertragsübersicht. Weitere Off-Market-Angebote auf Anfrage.</p>
+        </div>
+        <a class="btn btn-outline" href="kontakt.html"><span data-i18n="mfh.cta">Off-Market anfragen</span> <i data-icon="arrow"></i></a>
+      </div>
+      <div class="grid grid-3" id="featured-mfh"></div>
+    </div>
+  </section>
+
+  <!-- RENT -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head flex wrap" style="justify-content:space-between;align-items:end;gap:20px">
+        <div>
+          <span class="eyebrow" data-i18n="rent.eyebrow">Neu: Vermietung</span>
+          <h2 class="mb-0" data-i18n="rent.title">Aktuelle Mietangebote</h2>
+        </div>
+        <a class="btn btn-outline" href="immobilien.html?deal=miete"><span data-i18n="rent.all">Alle Mietangebote</span> <i data-icon="arrow"></i></a>
+      </div>
+      <div class="grid grid-3" id="featured-rent"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section-sm section-dark">
+    <div class="container stats">
+      <div class="stat"><strong>15+</strong><span data-i18n="stats.years">Jahre Erfahrung in City</span></div>
+      <div class="stat"><strong>850+</strong><span data-i18n="stats.sold">vermittelte Immobilien</span></div>
+      <div class="stat"><strong>4,9/5</strong><span data-i18n="stats.rating">Kundenbewertung</span></div>
+      <div class="stat"><strong>48 h</strong><span data-i18n="stats.valuation">bis zur Wertermittlung</span></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-i18n="test.eyebrow">Kundenstimmen</span>
+        <h2 data-i18n="test.title">Was unsere Kunden sagen</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card quote reveal">
+          <div class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div>
+          <p data-i18n="test.q1">„Von der ersten Besichtigung bis zum Notartermin perfekt begleitet. Der Finanzierungsrechner hat uns gezeigt, was realistisch ist.“</p>
+          <div class="who"><span class="avatar">JK</span><div><strong>Julia & Markus K.</strong><div class="muted small" data-i18n="test.w1">Wohnung gekauft</div></div></div>
+        </div>
+        <div class="card quote reveal">
+          <div class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div>
+          <p data-i18n="test.q2">„Unser Mehrfamilienhaus wurde innerhalb von sechs Wochen verkauft – diskret und über dem erwarteten Preis.“</p>
+          <div class="who"><span class="avatar">HW</span><div><strong>Helmut W.</strong><div class="muted small" data-i18n="test.w2">Gesamtobjekt verkauft</div></div></div>
+        </div>
+        <div class="card quote reveal">
+          <div class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div>
+          <p data-i18n="test.q3">„Schnelle Bewertung, faires Ankaufsangebot und keine endlosen Besichtigungen. Sehr empfehlenswert!“</p>
+          <div class="who"><span class="avatar">SA</span><div><strong>Sabine A.</strong><div class="muted small" data-i18n="test.w3">Haus verkauft</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-sm" style="padding-bottom:88px">
+    <div class="container">
+      <div class="cta-banner">
+        <div style="position:relative;z-index:1">
+          <h2 data-i18n="cta.title">Persönliche Beratung – kostenlos und unverbindlich</h2>
+          <p class="mb-0" data-i18n="cta.text">Rufen Sie uns an oder schreiben Sie uns. Wir melden uns innerhalb eines Werktages.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="kontakt.html"><span data-i18n="cta.contact">Kontakt aufnehmen</span></a>
+          <a class="btn btn-ghost-light" data-site-href="phone" href="#"><i data-icon="phone"></i> <span data-site="phone"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/properties.js"></script>
+<script src="js/banks.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

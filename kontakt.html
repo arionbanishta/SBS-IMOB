@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – Muster Immobilien in City</title>
+  <meta name="description" content="Kontaktieren Sie Muster Immobilien in City – telefonisch, per E-Mail oder über unser Kontaktformular.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html" data-i18n="bc.home">Startseite</a> / <span data-i18n="nav.contactShort">Kontakt</span></div>
+      <h1 data-i18n="ct.h1">Wir sind für Sie da</h1>
+      <p class="lead mb-0" data-i18n="ct.lead">Fragen zu einem Objekt, zur Finanzierung oder zum Verkauf Ihrer Immobilie? Wir melden uns innerhalb eines Werktages.</p>
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-bottom:88px">
+    <div class="container split" style="align-items:start">
+      <div class="card" style="padding:30px">
+        <h2 style="font-size:1.8rem" data-i18n="ct.formT">Nachricht senden</h2>
+        <form data-form="contact" data-success="contact-ok" novalidate>
+          <div class="form-grid">
+            <div class="field full"><label for="topic" data-i18n="ct.topic">Ihr Anliegen</label>
+              <select id="topic" name="anliegen">
+                <option value="kaufen" data-i18n="ct.t1">Ich möchte eine Immobilie kaufen</option>
+                <option value="verkaufen" data-i18n="ct.t2">Ich möchte meine Immobilie verkaufen</option>
+                <option value="gesamtobjekt" data-i18n="ct.t3">Ganzes Gebäude kaufen / verkaufen</option>
+                <option value="mieten" data-i18n="ct.t4">Ich suche eine Mietwohnung</option>
+                <option value="finanzierung" data-i18n="ct.t5">Finanzierungsberatung</option>
+                <option value="suchauftrag" data-i18n="ct.t6">Suchauftrag anlegen</option>
+                <option value="sonstiges" data-i18n="ct.t7">Sonstiges</option>
+              </select></div>
+            <div class="field"><label data-i18n="form.name">Name *</label><input type="text" name="name" required autocomplete="name"></div>
+            <div class="field"><label data-i18n="form.email">E-Mail *</label><input type="email" name="email" required autocomplete="email"></div>
+            <div class="field full"><label data-i18n="form.phone">Telefon</label><input type="tel" name="telefon" autocomplete="tel"></div>
+            <div class="field full"><label data-i18n="form.message">Nachricht *</label><textarea name="nachricht" required></textarea></div>
+            <label class="check full"><input type="checkbox" name="datenschutz" required> <span data-i18n="form.consentStatic">Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Hinweise in der <a href="datenschutz.html">Datenschutzerklärung</a>. *</span></label>
+          </div>
+          <button class="btn btn-primary mt-3" type="submit"><span data-i18n="form.send">Anfrage senden</span> <i data-icon="arrow"></i></button>
+        </form>
+        <div class="form-success" id="contact-ok"><h3 data-i18n="form.thanks">Vielen Dank!</h3><span data-i18n="form.thanksText">Wir haben Ihre Anfrage erhalten und melden uns innerhalb eines Werktages.</span></div>
+      </div>
+
+      <div class="grid" style="gap:18px">
+        <div class="card feature" style="display:flex;gap:18px;align-items:flex-start">
+          <div class="f-icon" style="margin:0"><i data-icon="phone"></i></div>
+          <div><h3 data-i18n="ct.phoneT">Telefon</h3><a data-site-href="phone" href="#" style="font-weight:600;color:var(--ink);text-decoration:none"><span data-site="phone"></span></a><div class="muted small" data-i18n="ct.phoneP">Mo–Fr 9:00–18:00 Uhr</div></div>
+        </div>
+        <div class="card feature" style="display:flex;gap:18px;align-items:flex-start">
+          <div class="f-icon" style="margin:0"><i data-icon="mail"></i></div>
+          <div><h3>E-Mail</h3><a data-site-href="email" href="#" style="font-weight:600;color:var(--ink);text-decoration:none"><span data-site="email"></span></a><div class="muted small" data-i18n="ct.mailP">Antwort innerhalb eines Werktages</div></div>
+        </div>
+        <div class="card feature" style="display:flex;gap:18px;align-items:flex-start">
+          <div class="f-icon" style="margin:0"><i data-icon="pin"></i></div>
+          <div><h3 data-i18n="ct.officeT">Büro</h3><span data-site="legalName"></span><br><span data-site="street"></span><br><span data-site="zip"></span> <span data-site="city"></span><div class="muted small mt-2" data-i18n="ct.officeP">Termine vor Ort bitte nach Vereinbarung.</div></div>
+        </div>
+        <div class="card" style="aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,#e9e3d8,#d8cfbf);color:var(--muted);text-align:center;padding:20px">
+          <div><i data-icon="pin"></i><br><span data-i18n="ct.map">Hier kann eine Karte (z. B. OpenStreetMap) eingebunden werden.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/layout.js"></script>
+<script>
+  const topic = new URLSearchParams(location.search).get('topic');
+  if (topic) document.getElementById('topic').value = topic;
+</script>
+</body>
+</html>
