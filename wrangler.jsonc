@@ -1,0 +1,10 @@
+{
+  // Cloudflare deployment: serves this folder as a static website.
+  // Deploy with: npx wrangler deploy
+  "name": "sbs-imob",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page"
+  }
+}

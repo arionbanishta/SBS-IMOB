@@ -26,6 +26,16 @@ python -m http.server 8080
 ```
 Then open http://localhost:8080
 
+## Deploy (Cloudflare)
+Live: https://sbs-imob.arion0banishta.workers.dev
+GitHub: https://github.com/arionbanishta/SBS-IMOB
+
+After changing files, commit and push to GitHub, then publish:
+```
+npx wrangler deploy
+```
+`wrangler.jsonc` holds the Cloudflare settings; `.assetsignore` keeps README and config files off the live site.
+
 ## Before going live
 - Fill in Impressum & Datenschutz (have them legally checked), incl. § 34c GewO broker licence.
 - Replace demo properties, team photos, stats and testimonials with real ones.
